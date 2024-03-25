@@ -20,7 +20,7 @@ const userSchema = new Schema(
       default: "user",
     },
     token: { type: String, default: "" },
-    // cryptos: cryptoSchema,
+    cryptos: cryptoSchema,
     // avatarURL: { type: String, require: true },
   },
   { versionKey: false, timestamps: true }
