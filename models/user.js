@@ -3,7 +3,7 @@ const { Schema, model } = require("mongoose");
 
 const { handleMongooseError } = require("../helpers");
 
-const { EMAILREGEXP } = require("../constans");
+const { EMAILREGEXP } = require("../constants");
 
 const userSchema = new Schema(
   {
@@ -20,6 +20,7 @@ const userSchema = new Schema(
       default: "user",
     },
     token: { type: String, default: "" },
+    // cryptos: cryptoSchema,
     // avatarURL: { type: String, require: true },
   },
   { versionKey: false, timestamps: true }
