@@ -4,6 +4,7 @@ const { Schema, model } = require("mongoose");
 const { handleMongooseError } = require("../helpers");
 
 const { EMAILREGEXP } = require("../constants");
+const { Crypto } = require("./crypto");
 
 const userSchema = new Schema(
   {
@@ -20,7 +21,11 @@ const userSchema = new Schema(
       default: "user",
     },
     token: { type: String, default: "" },
-    cryptos: cryptoSchema,
+    verify: {
+      type: Boolean,
+      default: false,
+    },
+    // cryptos: [Crypto],
     // avatarURL: { type: String, require: true },
   },
   { versionKey: false, timestamps: true }
